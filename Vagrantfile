@@ -30,11 +30,11 @@ Vagrant.configure("2") do |config|
 	
         config.vm.define :gitlab do |gitlab_config|
 	gitlab_config.vm.provider "virtualbox" do |vb|
-            vb.memory = "8192"
-            vb.cpus = 8
+            vb.memory = "4096"
+            vb.cpus = 4
             vb.name = "FiiPractic-GitLab"
         end
-	gitlab_config.vm.disk :disk, size: "20GB", primary: true
+	gitlab_config.vm.disk :disk, size: "30GB", primary: true
         gitlab_config.vm.host_name = 'gitlab.fiipractic.lan'
         gitlab_config.vm.box = "#{os}"
         gitlab_config.vm.network "private_network", ip: "#{ho_net}.20"
